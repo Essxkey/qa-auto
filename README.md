@@ -43,7 +43,7 @@ git push -u origin main
 推送完成后：GitHub 仓库页面会显示 Actions 正在运行；两个 job 全绿后，可在 README 顶部加状态徽章：
 
 ```markdown
-[![Test Suite CI](https://github.com/<owner>/<repo>/actions/workflows/test-suite.yml/badge.svg)](https://github.com/<owner>/<repo>/actions/workflows/test-suite.yml)
+[![Test Suite CI](https://github.com/Essxkey/qa-auto/actions/workflows/test-suite.yml/badge.svg)](https://github.com/Essxkey/qa-auto/actions/workflows/test-suite.yml)
 ```
 
 ## 四、本地复现 CI（可选）
