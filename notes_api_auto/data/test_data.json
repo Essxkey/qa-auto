@@ -1,0 +1,93 @@
+{
+  "register_validation": [
+    {
+      "id": "email_missing_at",
+      "name": "ApiTester",
+      "email": "not-an-email",
+      "password": "Password123!",
+      "expected_status": 400,
+      "expected_message": "A valid email address is required"
+    },
+    {
+      "id": "email_no_domain",
+      "name": "ApiTester",
+      "email": "user@",
+      "password": "Password123!",
+      "expected_status": 400,
+      "expected_message": "A valid email address is required"
+    },
+    {
+      "id": "email_no_local",
+      "name": "ApiTester",
+      "email": "@example.com",
+      "password": "Password123!",
+      "expected_status": 400,
+      "expected_message": "A valid email address is required"
+    },
+    {
+      "id": "email_with_space",
+      "name": "ApiTester",
+      "email": "a b@example.com",
+      "password": "Password123!",
+      "expected_status": 400,
+      "expected_message": "A valid email address is required"
+    },
+    {
+      "id": "name_too_short",
+      "name": "abc",
+      "email": "rand@example.com",
+      "password": "Password123!",
+      "expected_status": 400,
+      "expected_message": "User name must be between 4 and 30 characters"
+    },
+    {
+      "id": "name_too_long",
+      "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
+      "email": "rand@example.com",
+      "password": "Password123!",
+      "expected_status": 400,
+      "expected_message": "User name must be between 4 and 30 characters"
+    },
+    {
+      "id": "password_too_short",
+      "name": "ApiTester",
+      "email": "rand@example.com",
+      "password": "abc12",
+      "expected_status": 400,
+      "expected_message": "Password must be between 6 and 30 characters"
+    },
+    {
+      "id": "password_too_long",
+      "name": "ApiTester",
+      "email": "rand@example.com",
+      "password": "1234567890123456789012345678901",
+      "expected_status": 400,
+      "expected_message": "Password must be between 6 and 30 characters"
+    }
+  ],
+  "login_validation": [
+    {
+      "id": "missing_password",
+      "email": "whatever@example.com",
+      "password": "",
+      "expected_status": 400,
+      "expected_message": "Password must be between 6 and 30 characters"
+    },
+    {
+      "id": "missing_email",
+      "email": "",
+      "password": "Password123!",
+      "expected_status": 400
+    }
+  ],
+  "note_category_invalid": [
+    {"id": "unknown_category", "category": "Invalid"},
+    {"id": "lowercase_category", "category": "work"},
+    {"id": "all_upper_category", "category": "WORK"},
+    {"id": "empty_category", "category": ""}
+  ],
+  "note_completed_not_boolean": [
+    {"id": "string_yes", "completed": "yes"},
+    {"id": "none_value", "completed": null}
+  ]
+}

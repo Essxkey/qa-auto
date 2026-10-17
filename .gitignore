@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.pytest_cache/
+
+# 测试运行产物（本地生成，无需入库；CI 报告走 Actions Artifact）
+saucedemo_auto/report.html
+notes_api_auto/report.html
+saucedemo_auto/screenshots/
+
+# 系统 / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# 压缩包（本地交付用，不入库）
+*.zip
